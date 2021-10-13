@@ -51,6 +51,9 @@ public class ProductManagerImpl implements ProductManager {
     public List<Product> getProductsList(){
         return productsList;
     }
+    public Queue<Order> getOrdersList() {
+        return this.ordersList;
+    }
 
     @Override
     public Order serveOrder() {

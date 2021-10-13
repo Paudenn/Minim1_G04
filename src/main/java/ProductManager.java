@@ -1,5 +1,6 @@
 import java.util.HashMap;
 import java.util.List;
+import java.util.Queue;
 
 public interface ProductManager {
     List<Product> getProductsByPrice();
@@ -13,6 +14,8 @@ public interface ProductManager {
     void addUser(User user);
     HashMap <String,User> getUser();
     int getOrderAmount();
+    List<Product> getProductsList();
+    Queue<Order> getOrdersList();
 
 
 }

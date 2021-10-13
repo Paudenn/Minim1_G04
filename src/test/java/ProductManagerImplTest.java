@@ -25,7 +25,8 @@ public class ProductManagerImplTest {
 
     @After
     public void tearDown() {
-
+        scenario.getOrdersList().clear();
+        scenario.getProductsList().clear();
 
     }
 
