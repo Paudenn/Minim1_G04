@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.List;
 
 public interface ProductManager {
@@ -9,4 +10,9 @@ public interface ProductManager {
     public void addProduct(Product product);
 
     int getNumProducts();
+    void addUser(User user);
+    HashMap <String,User> getUser();
+    int getOrderAmount();
+
+
 }

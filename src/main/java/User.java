@@ -4,14 +4,17 @@ import java.util.List;
 public class User {
 
     String name;
+    String id;
     List<Order> orderList;
 
-    public User(String name, List<Order> orderList) {
+    public User(String name, List<Order> orderList,String id) {
         this.name = name;
         this.orderList = orderList;
+        this.id = id;
     }
-    public User(String name) {
+    public User(String name, String id) {
         this.name = name;
+        this.id = id;
         orderList = new ArrayList<>();
     }
 

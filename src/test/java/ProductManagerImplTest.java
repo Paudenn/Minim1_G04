@@ -51,12 +51,17 @@ public class ProductManagerImplTest {
         // 2 donuts
         // 1 cafè
         // 1 bocata llom
-        Order order = null;
-        order.setUser("Gilbert");
-        order.addLP(2,"donuts");
-        order.addLP(1,"cafè");
-        order.addLP(1,"bocata  llom");
+        Assert.assertEquals(0, scenario.getOrderAmount());
+
+        scenario.addUser(new User("Gilbert","123"));
+        Order order = new Order(scenario.getUser().get("Gilbert"));
+        order.addLP(new Product("donut",2.2,2));
+        order.addLP(new Product("cafe",5.0,1));
+        order.addLP(new Product("bocata",6.4,1));
         scenario.doOrder(order);
+        Assert.assertEquals(1, scenario.getOrderAmount());
+
+
     }
 
 }

@@ -1,3 +1,5 @@
+
+
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -5,7 +7,7 @@ import java.util.logging.Logger;
 public class ProductManagerImpl implements ProductManager {
     List<Product> productsList = new ArrayList<>();
     Queue<Order> ordersList = new LinkedList<>();
-    List<User> usersList = new ArrayList<>();
+    HashMap<String,User> users = new HashMap<String,User>();
 
     final static Logger logger = Logger.getLogger(String.valueOf(ProductManagerImpl.class));
 
@@ -31,7 +33,19 @@ public class ProductManagerImpl implements ProductManager {
     }
     @Override
     public void doOrder(Order order) {
+        ordersList.add(order);
+        User client = order.getUser();
+        client.getOrderList().add(order);
+    }
+    public void addUser(User user) {
 
+        this.users.put(user.getName(),user);
+
+    }
+
+    public HashMap<String, User> getUser()
+    {
+        return this.users;
     }
 
     public List<Product> getProductsList(){
@@ -54,8 +68,10 @@ public class ProductManagerImpl implements ProductManager {
     }
 
     public void addProduct(Product product) {
-        productsList.add(product);
+        this.productsList.add(product);
     }
+
+    public int getOrderAmount(){ return this.ordersList.size(); }
 
     @Override
     public int getNumProducts() {

@@ -3,23 +3,22 @@ import java.util.List;
 
 public class Order {
 
-    String user;
+    User user;
     List<Product> productList;
 
-    public Order(String user, List<Product> productList) {
+
+    public Order(User user) {
         this.user = user;
-        this.productList = productList;
-    }
-    public Order(String user) {
-        this.user = user;
-        this.productList = new ArrayList<>();
+        this.productList = new ArrayList<Product>();
     }
 
-    public String getUser() {
+
+
+    public User getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
@@ -29,6 +28,12 @@ public class Order {
 
     public void setProductList(List<Product> productList) {
         this.productList = productList;
+    }
+
+
+    public void addLP(Product product) {
+
+        productList.add(product);
     }
 
 
