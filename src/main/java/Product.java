@@ -3,11 +3,13 @@ public class Product {
     String name;
     double price;
     int amount;
+    int sells;
 
-    public Product(String name, double price, int amount) {
+    public Product(String name, double price, int amount){
         this.name = name;
         this.price = price;
         this.amount = amount;
+
     }
 
     public String getName() {
@@ -20,6 +22,9 @@ public class Product {
 
     public int getAmount() {
         return amount;
+    }
+    public  int getSells(){
+        return sells;
     }
 
     public void setName(String name) {
